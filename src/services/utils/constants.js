@@ -33,6 +33,7 @@ const apiConstants = {
         SETUP_PASSWORD: "setupPassword",
         FILE_UPLOAD_KEY: "fileUpload",
         CURRENT_ONBOARDED_USER: "currentOnboardedUser",
+        GET_TEMPLATE_LIST: "getTemplateList",
     },
 };
 export default apiConstants;

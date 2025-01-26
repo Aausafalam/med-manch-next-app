@@ -73,10 +73,18 @@ const Payment = () => {
                 </div>
             </div>
             <div className={styles.button_container}>
-                <Button buttonContainerClassName={styles.previous_button_container} flat={true} icon={GlobalICONS.LEFT_ARROW} variant="secondary" onClick={() => handleStepChange(currentStep - 1)}>
+                <Button
+                    outlined={true}
+                    flat={true}
+                    buttonContainerClassName={styles.previous_button_container}
+                    icon={GlobalICONS.LEFT_ARROW}
+                    variant="secondary"
+                    onClick={() => handleStepChange(currentStep - 1)}
+                >
                     Previous
                 </Button>
                 <Button
+                    tonal={!userStatus.includes(onboardedUser.data?.currentOnboardingStep)}
                     disabled={!userStatus.includes(onboardedUser.data?.currentOnboardingStep)}
                     iconPosition={"right"}
                     icon={GlobalICONS.NEXT_ARROW}

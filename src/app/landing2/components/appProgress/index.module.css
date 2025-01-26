@@ -1,0 +1,53 @@
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding-inline: 1.5rem;
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+.image_container {
+    width: 50%;
+}
+.image_container img {
+    mix-blend-mode: multiply;
+}
+.content {
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 630px;
+}
+.content > span {
+    display: block;
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+.content h2 {
+    color: #262a37;
+    font-weight: 700;
+    margin-bottom: 0;
+    font-size: 33px;
+}
+.content p {
+    transition: 0.5s;
+    color: #716c80;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.start_trail {
+}
+.start_trail_button {
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%) !important;
+    box-shadow: 0px 12px 35px rgba(237, 39, 117, 0.25) !important;
+    padding-inline: 1.7rem;
+    padding-block: 0.8rem;
+}

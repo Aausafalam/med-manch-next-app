@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["images.unsplash.com"], // Add the allowed hostname here
+        domains: ["images.unsplash.com", "templates.envytheme.com","demos.pixinvent.com"], // Add the allowed hostname here
     },
 };
 

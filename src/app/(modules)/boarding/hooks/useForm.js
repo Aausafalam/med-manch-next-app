@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { Country } from "country-state-city";
 import BoardingUtils from "../utils";
 import boardingConstants from "../utils/constants";
@@ -8,6 +8,7 @@ import { useInstitute } from "@/services/context/institute";
 import { useWizardStep } from "./useWizardStep";
 import LandingTemplateOption from "../components/landingTemplateOption";
 import GlobalUtils from "@/lib/utils";
+import { useTemplate } from "@/services/context/template";
 
 export const useBasicInfoForm = (data) => {
     const { instituteSetupBasicInfo, onboardedUser } = useInstitute();
@@ -208,6 +209,10 @@ export const useInstituteInfoForm = (data) => {
                 multiple: false,
                 defaultValue: data?.brandLogo,
                 url: "/brand/logo/upload",
+                validationRules: {
+                    required: true,
+                },
+                validateOnChange: true,
             },
             {
                 type: "file",
@@ -218,6 +223,10 @@ export const useInstituteInfoForm = (data) => {
                 multiple: false,
                 defaultValue: data?.identityProof,
                 url: "/owners/documents/identity-proof/upload",
+                validationRules: {
+                    required: true,
+                },
+                validateOnChange: true,
             },
         ],
         [data]
@@ -248,6 +257,7 @@ export const useInstituteInfoForm = (data) => {
 };
 export const useThemeForm = (data) => {
     const { instituteSetupTheme, onboardedUser } = useInstitute();
+    const { templateList } = useTemplate();
     const { currentStep, handleStepChange } = useWizardStep();
 
     const themeFormConfig = useMemo(
@@ -322,7 +332,9 @@ export const useThemeForm = (data) => {
             handleStepChange(currentStep + 1);
         }
     };
-
+    useEffect(() => {
+        templateList.fetch({});
+    }, []);
     return { themeFormConfig, handleThemeSubmit, isThemeFormLoading: instituteSetupTheme.isLoading, themeFormErrors: instituteSetupTheme.errorMessages };
 };
 

@@ -1,0 +1,58 @@
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding-inline: 1.5rem;
+    padding-block: 1rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+.grid_item {
+    transition: 0.5s;
+    background-color: #f4f8fc;
+    margin-bottom: 25px;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 0.5rem;
+}
+.icon {
+    width: 100px;
+    height: 100px;
+    font-size: 45px;
+    position: relative;
+    color: white;
+    transition: 0.5s;
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+    background: linear-gradient(45.24deg, #9f5ff1 5.99%, #ff54b0 91.87%);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon svg {
+    width: 50px;
+    height: 50px;
+}
+.grid_item h3 {
+    font-size: 20px;
+    color: #262a37;
+    margin-bottom: 12px;
+    font-weight: 650;
+}
+.grid_item p {
+    color: #716c80;
+    font-size: 14px;
+    line-height: 1.8;
+}
+.grid_item:hover {
+    background-color: var(--whiteColor);
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.1), 0 30px 60px -30px rgba(107, 124, 147, 0.15);
+}
+.grid_item:hover .icon {
+    border-radius: 50%;
+}

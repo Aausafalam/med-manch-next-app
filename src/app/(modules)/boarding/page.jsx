@@ -34,6 +34,7 @@ const Boarding = () => {
                 onClick: () => handleStepChange(currentStep - 1),
                 variant: "secondary",
                 flat: true,
+                outlined: true,
                 icon: GlobalICONS.LEFT_ARROW,
                 disabled: isFirst,
                 buttonContainerClassName: styles.previous_button_container,

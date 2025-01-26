@@ -1,0 +1,122 @@
+.container_wrapper {
+    width: 100%;
+    background-color: #f7f7ff;
+    padding-block: 100px;
+}
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding-inline: 1.5rem;
+}
+.title {
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 55px;
+}
+.title span {
+    display: block;
+    margin-bottom: 10px;
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+.title h2 {
+    color: #262a37;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-size: 33px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.grid_item {
+    background-color: white;
+    transition: 0.5s;
+    padding: 40px 30px 35px 110px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+}
+.grid_item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+    z-index: -1;
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.icon {
+    top: 40px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    font-size: 25px;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    transition: 0.5s;
+    box-shadow: 5px 15px 35px rgba(38, 42, 55, 0.12);
+    background: linear-gradient(45.24deg, #9f5ff1 5.99%, #ff54b0 91.87%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon svg {
+    width: 30px;
+    height: 30px;
+}
+.grid_item h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    transition: 0.5s;
+    color: #262a37;
+    font-weight: 700;
+}
+.grid_item p {
+    transition: 0.5s;
+    color: #716c80;
+    font-size: 14px;
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+.grid_item:hover {
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.1), 0 30px 60px -30px rgba(107, 124, 147, 0.15);
+}
+.grid_item:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+.grid_item:hover .icon {
+    border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%;
+}
+.grid_item:hover h3,
+.grid_item:hover p {
+    color: white;
+}
+.view_more {
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.view_more_button {
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%) !important;
+    box-shadow: 0px 12px 35px rgba(237, 39, 117, 0.25) !important;
+    padding-inline: 1.7rem;
+    padding-bottom: 0.7rem;
+}

@@ -40,18 +40,12 @@ const FileUploadField = ({ formField, errors }) => {
         id,
         name,
         label,
-        required = false,
         accept = ["image", "doc", "pdf", "docx"],
         disabled = false,
         readonly = false,
-        groupIndex,
-        fieldName,
-        uploadFunction,
         onChange,
-        groupFields,
         style,
         info_text,
-        viewFile,
         multiple = false,
         maxFileSize = "5MB",
         maxFiles = 3,
@@ -63,6 +57,7 @@ const FileUploadField = ({ formField, errors }) => {
         imageQuality = 90,
         url,
         defaultValue,
+        validationRules,
     } = formField;
 
     const [files, setFiles] = useState([]);
@@ -79,43 +74,41 @@ const FileUploadField = ({ formField, errors }) => {
 
         const baseUrl = apiConstants.BACKEND_API_BASE_URL;
         const fileUrl = `${baseUrl}/Institutes/${value.path}`;
-
         return {
             source: fileUrl,
             options: {
                 type: "local",
                 metadata: {
-                    isDefault: true, // Add flag to identify default files
-                    poster: value.mimetype.startsWith("image/") ? fileUrl : null,
+                    isDefault: true,
+                    poster: value.mime_type.startsWith("image/") ? fileUrl : null,
                 },
                 file: {
-                    name: value.originalName,
-                    size: value.size,
-                    type: value.mimetype,
+                    name: value.original_name,
+                    size: value.file_size,
+                    type: value.mime_type,
                 },
             },
         };
     }, []);
 
-    // Handle default value
     useEffect(() => {
         if (defaultValue && initialLoadRef.current) {
             const processedFile = processDefaultValue(defaultValue);
             if (processedFile) {
                 setFiles([processedFile]);
-                initialLoadRef.current = false; // Mark initial load as complete
+                initialLoadRef.current = false;
             }
         }
     }, [defaultValue, processDefaultValue]);
 
     const handleValidation = useCallback(() => {
-        if (required && files.length === 0 && touched) {
+        if (validationRules.required && files.length === 0 && touched) {
             setError("This field is required");
             return false;
         }
         setError("");
         return true;
-    }, [required, files.length, touched]);
+    }, [validationRules.required, files.length, touched]);
 
     useEffect(() => {
         handleValidation();
@@ -205,15 +198,14 @@ const FileUploadField = ({ formField, errors }) => {
     const handleRemoveFile = (error, file) => {
         isRemovingRef.current = true;
         setFiles((prevFiles) => {
-            console.log(prevFiles);
+            const specificFile = prevFiles.find((f) => f.source.name === file.filename);
+            onChange({
+                target: {
+                    value: { ...specificFile, isDeleted: true },
+                    name,
+                },
+            });
             return prevFiles.filter((f) => f.source.name !== file.filename);
-        });
-
-        onChange({
-            target: {
-                value: null,
-                name,
-            },
         });
 
         if (file.source instanceof File) {
@@ -237,7 +229,7 @@ const FileUploadField = ({ formField, errors }) => {
             <div className={styles.labelWrapper}>
                 <label className={styles.label}>
                     {label}
-                    {required && <span className={styles.required}>*</span>}
+                    {validationRules.required && <span className={styles.required}>*</span>}
                 </label>
                 {info_text && <span className={styles.infoText}>{info_text}</span>}
             </div>
@@ -290,7 +282,6 @@ const FileUploadField = ({ formField, errors }) => {
                         `
                                 : ""
                         }
-                        ${required && touched && files.length === 0 ? `<span class="${styles.error}">This field is required</span>` : ""}
                     </div>
                 `}
                 className={`${styles.filePond} ${error ? styles.hasError : ""}`}

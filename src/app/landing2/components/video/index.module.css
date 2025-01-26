@@ -1,0 +1,112 @@
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: auto;
+    padding-inline: 1.5rem;
+}
+.video_box {
+    max-width: 1100px;
+    position: relative;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+}
+.video_box::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(34, 36, 50, 0.52);
+    border-radius: 10px;
+    opacity: 0.6;
+    z-index: 1;
+    transition: 0.5s;
+}
+.video_box > img {
+    width: 100%;
+    border-radius: 10px;
+}
+.video_box > a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    text-align: center;
+    line-height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%) translateX(-50%);
+    background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%);
+    border-radius: 50%;
+    color: #ffffff;
+    box-shadow: 15px 25px 35px rgba(38, 42, 55, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video_box > a svg {
+    width: 70px;
+    height: 70px;
+}
+.video_box > a::before,
+.video_box > a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+    left: 0;
+    border-radius: 50%;
+    border: 1px solid white;
+    animation: ripple 2s linear infinite;
+}
+.video_box > a::after {
+    animation: ripple 2s linear 1s infinite;
+}
+.shape1 {
+    bottom: 50px;
+    z-index: -1;
+    left: -50px;
+    position: absolute;
+    animation: movebounce 5s linear infinite;
+}
+.shape2 {
+    bottom: 18%;
+    z-index: -1;
+    right: -50px;
+    position: absolute;
+    animation: movebounce 5s linear infinite;
+}
+/*keyframes-css*/
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.75);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes movebounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
