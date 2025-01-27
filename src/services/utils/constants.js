@@ -1,15 +1,15 @@
 const apiConstants = {
-    BACKEND_API_BASE_URL: "http://192.168.183.220:3000/api/v1",
-    institute: {
-        BASE_Route: "/institutes",
-        SIGN_UP: "/owners/register",
-        VERIFY_EMAIL: "/owners/verify",
-        CURRENT_ONBOARDED_USER: "/current-onboarded-user",
-        SETUP_BASE_INFO: "/setup/basic-info",
-        SETUP_PAYMENT: "/setup/payment",
-        SETUP_DETAILS: "/setup/details",
-        SETUP_TEMPLATE: "/setup/template",
-        SETUP_PASSWORD: "/setup/password",
+    BACKEND_API_BASE_URL: "http://localhost:8080/api/v1",
+    hiring: {
+        BASE_Route: "/hiring",
+        CREATE_JOB: "/",
+    },
+    filUpload: {
+        BASE_Route: "/fileupload",
+    },
+    professional: {
+        BASE_Route: "/professional",
+        CREATE_PROFESSIONAL: "/",
     },
     template: {
         BASE_Route: "/template",
@@ -24,7 +24,8 @@ const apiConstants = {
         DELETE_USER: `/delete-courses`,
     },
     loadingStateKeys: {
-        SIGN_UP: "signup",
+        CREATE_JOB: "createJob",
+        CREATE_PROFESSIONAL: "createProfessional",
         VERIFY_EMAIL: "verifyEmail",
         SETUP_BASE_INFO: "setupBaseInfo",
         SETUP_PAYMENT: "setupPayment",

@@ -129,7 +129,7 @@ const FileUploadField = ({ formField, errors }) => {
         try {
             isProcessingRef.current = true;
             await fileUpload.execute({
-                url: url || "/owners/documents/identity-proof/upload",
+                url: url || "/upload/resume",
                 payload: {
                     [name]: file.file,
                 },
@@ -143,9 +143,7 @@ const FileUploadField = ({ formField, errors }) => {
                     console.log("Upload successful:", data);
                     onChange({
                         target: {
-                            value: {
-                                fileId: data.fileId,
-                            },
+                            value: data.filePath,
                             name,
                         },
                     });

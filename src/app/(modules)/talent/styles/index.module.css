@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+}
+.container > div {
+    padding-inline: 2rem;
+}
+.form_heading h2 {
+    color: var(--primary-color);
+    font-weight: 650;
+}
+.form_heading p {
+    font-size: 0.85rem;
+    font-weight: 400;
+}

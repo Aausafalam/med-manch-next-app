@@ -10,7 +10,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #f8f8fa;
+        --background: #ffffff;
         --foreground: black;
         --primary-font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
         --error-color: rgb(255, 76, 81);
@@ -78,9 +78,16 @@ body {
     display: inline-block;
 }
 :root {
+    --black-color: #262a37;
+    --white-color: #ffffff;
+    --max-width: 1320px;
+    --border-color: rgb(240, 240, 240);
+    --primary-color: #1e3a8a;
+    --brand-color: #19bb04;
+
     --backgrounColor: #f8f8fa;
     --v-global-theme-primary: 115, 103, 240;
-    --primary-color: rgba(115, 103, 240);
+    --primary-color: #1e3b8b;
     --primary-hover-color: rgba(211, 206, 207, 0.2);
     --primary-active-group-menu: rgba(211, 206, 207, 0.3);
     --primary-active-color: #ff4c51;

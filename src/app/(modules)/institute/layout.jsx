@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import LayoutWithoutSidebarNavbar from "../../layouts/WithoutNavbarSidebar";
 import "./styles/index.css";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 
 const AuthLayout = ({ children }) => {
     const { onboardedUser } = useInstitute();

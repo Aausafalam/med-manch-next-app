@@ -1,0 +1,13 @@
+.container {
+    margin-top: -1rem;
+}
+.success_message {
+    width: 100%;
+    text-align: left;
+}
+.success_message p {
+    color: green;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+}

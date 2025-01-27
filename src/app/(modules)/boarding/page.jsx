@@ -9,7 +9,7 @@ import DynamicForm from "@/components/form";
 import Payment from "./components/payment";
 import styles from "./styles/index.module.css";
 import boardingConstants from "./utils/constants";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import BoardingUtils from "./utils";
 import { useRouter } from "next/navigation";
 

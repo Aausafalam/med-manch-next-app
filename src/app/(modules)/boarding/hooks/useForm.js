@@ -4,7 +4,7 @@ import BoardingUtils from "../utils";
 import boardingConstants from "../utils/constants";
 import ColorOptions from "../components/colorOptions";
 import ThemeOptions from "../components/themeOptions";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import { useWizardStep } from "./useWizardStep";
 import LandingTemplateOption from "../components/landingTemplateOption";
 import GlobalUtils from "@/lib/utils";

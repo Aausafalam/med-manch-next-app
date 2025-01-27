@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    border-bottom: 2px solid #eeecec;
+    padding-bottom: 0.3rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+.container p {
+    font-size: 1.05rem !important;
+}

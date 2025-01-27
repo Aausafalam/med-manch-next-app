@@ -4,7 +4,7 @@ import Heading from "../header";
 import Button from "@/components/form/components/FieldTemplates/ButtonField";
 import Divider from "../divider";
 import GlobalICONS from "@/lib/utils/icons";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import { useWizardStep } from "../../hooks/useWizardStep";
 import SubscriptionDetails from "../subscriptionDetails";
 import PaymentCompleted from "../paymentCompleted";

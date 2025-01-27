@@ -1,14 +1,17 @@
 import { NotificationProvider } from "./notification";
-import { InstituteProvider } from "./institute";
+import { HiringProvider } from "./hiring";
 import { LoadingProvider } from "./loading";
 import { TemplateProvider } from "./template";
+import { ProfessionalProvider } from "./professional";
 
 const ContextProviders = ({ children }) => {
     return (
         <LoadingProvider>
             <NotificationProvider>
                 <TemplateProvider>
-                    <InstituteProvider>{children}</InstituteProvider>
+                    <HiringProvider>
+                        <ProfessionalProvider>{children}</ProfessionalProvider>
+                    </HiringProvider>
                 </TemplateProvider>
             </NotificationProvider>
         </LoadingProvider>

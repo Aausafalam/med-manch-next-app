@@ -70,7 +70,7 @@ export const useFileUpload = () => {
                     });
                 }
 
-                onSuccess?.(data.data);
+                onSuccess?.(data);
                 return data;
             } catch (error) {
                 showErrorNotification({

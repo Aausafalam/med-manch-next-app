@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./index.module.css";
 import AuthHeader from "../../components/header";
 import AuthWrapper from "../../components/authWrapper";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import { CheckCircle } from "lucide-react";
 const cn = (...classes) => {
     return classes.filter(Boolean).join(" ");

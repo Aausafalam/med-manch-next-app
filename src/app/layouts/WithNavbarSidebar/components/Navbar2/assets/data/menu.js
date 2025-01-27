@@ -1,32 +1,10 @@
 export const menuData = [
     {
-        name: "Home",
-        url: "/",
+        name: "Find Talent",
+        url: "/talent",
     },
     {
-        name: "Features",
-        url: "/features",
-    },
-    {
-        name: "Pricing",
-        url: "/pricing",
-    },
-    {
-        name: "Customers",
-        url: "/customers",
-        parentUrl: "/customers",
-    },
-    {
-        name: "Resources",
-        url: "/resources",
-        parentUrl: "/resources",
-    },
-    {
-        name: "Blog",
-        url: "/blog",
-    },
-    {
-        name: "Contact Us",
-        url: "/contact-us",
+        name: "For Professionals",
+        url: "/professionals",
     },
 ];

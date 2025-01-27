@@ -1,0 +1,65 @@
+.container {
+    max-width: 1320px;
+    margin: auto;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+.content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    max-width: 40rem;
+}
+.content h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 750;
+}
+.content p {
+    font-size: 1.15rem;
+    color: var(--primary-color);
+    font-weight: 650;
+}
+.button_container {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.content .signup_today {
+    background: var(--brand-color) !important;
+}
+
+.banner {
+    width: 50%;
+}
+.banner img {
+    width: 100%;
+    margin-top: 3rem;
+}
+@media screen and (max-width: 1050px) {
+    .content h2 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .content {
+        margin-right: auto;
+    }
+    .banner {
+        width: 100%;
+        max-width: 30rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .content h2 {
+        font-size: 1.5rem;
+    }
+}

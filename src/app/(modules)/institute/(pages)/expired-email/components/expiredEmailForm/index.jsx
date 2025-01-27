@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import styles from "./index.module.css";
 import Link from "next/link";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import Loader from "@/components/Loader";
 import SuccessText from "@/components/SuccessText";
 import { useRouter } from "next/navigation";

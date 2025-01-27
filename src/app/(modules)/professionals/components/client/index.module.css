@@ -1,0 +1,20 @@
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    padding-block: 3rem;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2rem;
+    overflow: auto;
+}
+.container::-webkit-scrollbar {
+    display: none;
+}
+.container img {
+    width: 120px;
+}
+.container > div {
+    display: flex;
+    align-items: center;
+    min-width: 100px;
+}

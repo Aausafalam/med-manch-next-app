@@ -1,0 +1,62 @@
+.container {
+    max-width: var(--max-width);
+    margin: auto;
+    display: flex;
+    padding-top: 5rem !important;
+}
+.container > div {
+    width: 50%;
+}
+.got_talent {
+    padding: 2rem;
+    background-color: var(--white-color);
+}
+.got_talent > p {
+    color: var(--black-color);
+    font-weight: 400;
+    font-size: 1rem;
+}
+.got_talent > h2 {
+    font-size: 1.35rem;
+    font-weight: 650;
+    color: var(--primary-color);
+}
+.list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+.list > div {
+    display: flex;
+    gap: 1rem;
+}
+.list > div svg {
+    width: 27px;
+    height: 27px;
+    margin-top: 0.2rem;
+}
+.list > div h3 {
+    max-width: 300px;
+    font-weight: 650;
+    font-size: 1.1rem;
+    color: var(--black-color);
+}
+.list > div p {
+    max-width: 300px;
+    font-size: 0.85rem;
+    color: var(--black-color);
+    line-height: 1.23;
+    margin-top: 0.15rem;
+}
+.need_talent {
+    background-color: #e5f3ff;
+}
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .container > div {
+        width: 100%;
+    }
+}

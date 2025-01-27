@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./index.module.css";
-import { useInstitute } from "@/services/context/institute";
+import { useInstitute } from "@/services/context/hiring";
 import AuthHeader from "@/app/(modules)/institute/components/header";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -25,7 +25,7 @@ const ValidateToken = ({ token }) => {
     };
 
     useEffect(() => {
-         handleTokenVerification(token);
+        handleTokenVerification(token);
     }, [token]);
 
     return (
